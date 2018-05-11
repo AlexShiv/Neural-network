@@ -12,7 +12,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 public class TestNet {
 
@@ -25,9 +24,6 @@ public class TestNet {
         int channels = 1; // single channel for grayscale images
         int outputNum = 10; // 10 digits classification
         List<Integer> lableList = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-
-        int seed = 1234;
-        Random randNumGen = new Random(seed);
 
         // Создание сети и ее конфигурации
         MultiLayerNetwork network = null;
