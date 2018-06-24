@@ -7,49 +7,56 @@ import org.nd4j.linalg.dataset.api.preprocessor.ImagePreProcessingScaler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 public class TestNet {
 
-    private static final Logger log = LoggerFactory.getLogger(TestNet.class);
-    private static String trainPath = "C:\\Users\\alexey\\AppData\\Local\\Temp\\mnist";
+    private final Logger log = LoggerFactory.getLogger(TestNet.class);
+    private String trainPath = "C:\\Users\\alexey\\AppData\\Local\\Temp\\mnist";
+    private MultiLayerNetwork network;
+    private int height;
+    private int width;
+    private int channels;
 
-    public static void main(String[] args) throws IOException {
-        int height = 28;
-        int width = 28;
-        int channels = 1; // single channel for grayscale images
-        int outputNum = 10; // 10 digits classification
-        List<Integer> lableList = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    public TestNet(int height, int width, int channels) {
+        this.network = null;
+        this.height = height;
+        this.width = width;
+        this.channels = channels;
+    }
 
+    public  void buildNet(){
         // Создание сети и ее конфигурации
-        MultiLayerNetwork network = null;
-
 
         log.info("************LOAD NETWORK CONFIG*****************");
         try {
             network = ModelSerializer.restoreMultiLayerNetwork(new File(trainPath + "/minist-model.zip"));
-        } catch (FileNotFoundException ex) {
+        } catch (IOException ex) {
             log.error("ОШИБКА фАЙЛЕ ЗАГРУЗКИ");
             System.exit(0);
         }
 
+        // инициализация сети
         network.init();
+        //File picData = new File(trainPath + "\\mnist_png\\data\\2.png");
+    }
 
-        // evaluation while training (the score should go down)
-        log.info("***********TESTING DATA************");
-
-        File picData = new File(trainPath + "\\mnist_png\\data\\2.png");
+    public String inNet(Image image) {
         NativeImageLoader loader = new NativeImageLoader(height, width, channels);
-        INDArray img = loader.asMatrix(picData);
+        INDArray img = null;
+        try {
+            img = loader.asMatrix(image);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         DataNormalization scalerPros = new ImagePreProcessingScaler(0, 1);
         scalerPros.transform(img);
 
         INDArray outputRes = network.output(img);
-        log.info(lableList.toString());
-        log.info(outputRes.toString());
+        String out = outputRes.toString();
+        log.info(out);
+        return out;
     }
 }
