@@ -7,7 +7,6 @@ import org.nd4j.linalg.dataset.api.preprocessor.ImagePreProcessingScaler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -43,13 +42,14 @@ public class TestNet {
         //File picData = new File(trainPath + "\\mnist_png\\data\\2.png");
     }
 
-    public String inNet(Image image) {
+    public String inNet(File f) {
         NativeImageLoader loader = new NativeImageLoader(height, width, channels);
-        INDArray img = null;
+        INDArray img;
         try {
-            img = loader.asMatrix(image);
+            img = loader.asMatrix(f);
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
         DataNormalization scalerPros = new ImagePreProcessingScaler(0, 1);
         scalerPros.transform(img);
