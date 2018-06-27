@@ -74,7 +74,7 @@ public class MainFrameController {
             draw(x, y);
         });
         clearButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            gc.clearRect(0, 0, width*20, height*20);
+            gc.clearRect(0, 0, width * 20, height * 20);
             for (int i = 0; i < boardMas.length; i++) {
                 for (int j = 0; j < boardMas[i].length; j++) {
                     boardMas[i][j] = 0;
@@ -112,8 +112,7 @@ public class MainFrameController {
     private void draw(int x, int y) {
         if (boardMas[x][y] == 0) {
             gc.clearRect(x * 20, y * 20, 20, 20);
-        }
-        else {
+        } else {
             gc.setFill(Color.BLACK);
             gc.fillRect(x * 20, y * 20, 20, 20);
         }

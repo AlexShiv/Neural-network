@@ -13,7 +13,7 @@ import java.io.IOException;
 public class TestNet {
 
     private final Logger log = LoggerFactory.getLogger(TestNet.class);
-    private String trainPath = "C:\\Users\\alexey\\AppData\\Local\\Temp\\mnist";
+    private String trainPath = "C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist";
     private MultiLayerNetwork network;
     private int height;
     private int width;
@@ -26,7 +26,7 @@ public class TestNet {
         this.channels = channels;
     }
 
-    public  void buildNet(){
+    public void buildNet() {
         // Создание сети и ее конфигурации
 
         log.info("************LOAD NETWORK CONFIG*****************");
@@ -55,7 +55,8 @@ public class TestNet {
         scalerPros.transform(img);
 
         INDArray outputRes = network.output(img);
-        String out = outputRes.toString();
+        log.info(outputRes.toString());
+        String out = outputRes.argMax().amaxNumber().toString();
         log.info(out);
         return out;
     }
