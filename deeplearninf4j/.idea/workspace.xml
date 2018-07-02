@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f2a186b-2866-4347-bb79-933d32647305" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageAugmentation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ImageAugmentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageAugmentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/NNMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NNMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/TestShape.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TestShape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MainFrameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainFrameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/NNMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/NNMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestNet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestNet.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +26,8 @@
       <file leaf-file-name="MainFrameController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MainFrameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="83" column="66" selection-start-line="83" selection-start-column="66" selection-end-line="83" selection-end-column="66" />
+            <state relative-caret-position="271">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
                 <element signature="e#1337#1606#0" />
                 <element signature="e#1666#1935#0" />
@@ -38,12 +42,25 @@
       <file leaf-file-name="ImageAugmentation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ImageAugmentation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+            <state relative-caret-position="374">
+              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding>
-                <element signature="method#main#0;class#ImageAugmentation#0" />
-                <element signature="method#rotate#0;class#ImageAugmentation#0" />
                 <element signature="method#getDefaultConfiguration#0;class#ImageAugmentation#0" />
+                <element signature="method#normalize#0;class#ImageAugmentation#0" />
+                <element signature="method#writeImage#0;class#ImageAugmentation#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestNet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TestNet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+              <folding>
+                <element signature="method#buildNet#0;class#TestNet#0" />
+                <element signature="method#inNet#0;class#TestNet#0" />
               </folding>
             </state>
           </provider>
@@ -52,17 +69,8 @@
       <file leaf-file-name="NNMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/NNMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestNet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TestNet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="560">
+              <caret line="124" column="29" lean-forward="true" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -71,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/RunApp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -90,21 +98,26 @@
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/NNMainPic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/NNMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/MainFrame.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TestNet.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/MainFrameController.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/RunApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/RunApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TestNet.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainFrameController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ImageAugmentation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TestNet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/NNMain.java" />
       </list>
     </option>
   </component>
@@ -132,9 +145,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
-    <option name="height" value="1034" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -144,9 +158,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,6 +195,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,9 +231,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ImageAugmentation">
+  <component name="RunManager" selected="Application.NNMain">
     <configuration name="ImageAugmentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ImageAugmentation" />
+      <module name="deeplearninf4j" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="NNMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NNMain" />
       <module name="deeplearninf4j" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -278,9 +297,13 @@
     <list>
       <item itemvalue="Application.RunApp" />
       <item itemvalue="Application.ImageAugmentation" />
+      <item itemvalue="Application.NNMain" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NNMain" />
+        <item itemvalue="Application.RunApp" />
+        <item itemvalue="Application.ImageAugmentation" />
         <item itemvalue="Application.ImageAugmentation" />
         <item itemvalue="Application.RunApp" />
       </list>
@@ -374,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530087609513</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add rotate script">
+      <created>1530438817691</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1530438817692</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -383,18 +413,18 @@
     <layout>
       <window_info anchor="right" id="Palette" order="8" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3287483" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49934897" weight="0.3287483" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50390625" side_tool="true" visible="true" weight="0.42090786" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5052083" side_tool="true" weight="0.42090786" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.29947916" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49804688" weight="0.3287483" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49609375" visible="true" weight="0.42090786" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49479166" visible="true" weight="0.303989" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14453125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17382812" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -437,7 +467,8 @@
     <MESSAGE value="готовая графика, но сеть крайне плохо распознает изображения" />
     <MESSAGE value="доп файлы" />
     <MESSAGE value="Final Version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Version" />
+    <MESSAGE value="add rotate script" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rotate script" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -779,30 +810,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/RunApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TestNet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/TestShape.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/TestShape2.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/TestShape2.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/TestNet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="method#buildNet#0;class#TestNet#0" />
+            <element signature="method#inNet#0;class#TestNet#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/RunApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainFrameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="83" column="66" selection-start-line="83" selection-start-column="66" selection-end-line="83" selection-end-column="66" />
+        <state relative-caret-position="271">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="e#1337#1606#0" />
             <element signature="e#1666#1935#0" />
@@ -815,19 +848,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/NNMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+        <state relative-caret-position="560">
+          <caret line="124" column="29" lean-forward="true" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageAugmentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        <state relative-caret-position="374">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
           <folding>
-            <element signature="method#main#0;class#ImageAugmentation#0" />
-            <element signature="method#rotate#0;class#ImageAugmentation#0" />
             <element signature="method#getDefaultConfiguration#0;class#ImageAugmentation#0" />
+            <element signature="method#normalize#0;class#ImageAugmentation#0" />
+            <element signature="method#writeImage#0;class#ImageAugmentation#0" />
           </folding>
         </state>
       </provider>
