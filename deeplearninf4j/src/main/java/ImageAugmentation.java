@@ -15,17 +15,18 @@ public class ImageAugmentation {
             File folderWithImage = new File(f.getPath() + "\\" + s);
             String[] arrImage = folderWithImage.list();
             for (String pic : arrImage) {
-                BufferedImage img = null;
+                BufferedImage img;
                 try {
                     img = ImageIO.read(new File(folderWithImage + "\\" + pic));
                 } catch (IOException e) {
                     e.printStackTrace();
+                    continue;
                 }
                 for (int i = -90; i <= 90; i += 5) {
                     if (i == 0) continue;
                     BufferedImage img2 = rotate(img, i);
                     normalize(img2);
-                    writeImage(img2, fnew + "\\" + s + "\\rot(" + i + ")" + pic);
+                    writeImage(img2, fnew + "\\" + s + "\\"+ "angle(" + i + ")" + pic);
                 }
             }
         }
@@ -33,6 +34,7 @@ public class ImageAugmentation {
     }
 
     public static BufferedImage rotate(BufferedImage image, double angle) {
+        angle = (Math.PI/180)*(angle);
         double sin = Math.abs(Math.sin(angle));
         double cos = Math.abs(Math.cos(angle));
         int w = image.getWidth();

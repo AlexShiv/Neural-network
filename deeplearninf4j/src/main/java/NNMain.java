@@ -34,7 +34,7 @@ import java.util.Random;
 public class NNMain {
 
     private static final Logger log = LoggerFactory.getLogger(NNMain.class);
-    private static String trainPath = "C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist\\mnist_png";
+    private static String trainPath = "C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist\\mnist_png\\data";
 
     public static void main(String[] args) throws IOException {
         int height = 28;
@@ -47,7 +47,7 @@ public class NNMain {
         Random randNumGen = new Random(seed);
 
         // vectorization of train data
-        File trainData = new File(trainPath + "\\training");
+        File trainData = new File(trainPath + "\\numbers — new");
         FileSplit trainSplit = new FileSplit(trainData, NativeImageLoader.ALLOWED_FORMATS, randNumGen);
         ParentPathLabelGenerator labelMaker = new ParentPathLabelGenerator(); // parent path as the image label
         ImageRecordReader trainRR = new ImageRecordReader(height, width, channels, labelMaker);
@@ -60,7 +60,7 @@ public class NNMain {
         trainIter.setPreProcessor(scaler);
 
         // vectorization of test data
-        File testData = new File(trainPath + "\\testing");
+        File testData = new File("C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist\\mnist_png\\testing");
         FileSplit testSplit = new FileSplit(testData, NativeImageLoader.ALLOWED_FORMATS, randNumGen);
         ImageRecordReader testRR = new ImageRecordReader(height, width, channels, labelMaker);
         testRR.initialize(testSplit);
@@ -114,7 +114,7 @@ public class NNMain {
 
         // evaluation while training (the score should go down)
         network.init();
-        network.setListeners(new ScoreIterationListener(500));
+        network.setListeners(new ScoreIterationListener(10));
         log.debug("Total num of params: {}", network.numParams());
         for (int j = 0; j < nEpochs; j++) {
             network.fit(trainIter);
