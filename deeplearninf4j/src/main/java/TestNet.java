@@ -13,7 +13,7 @@ import java.io.IOException;
 public class TestNet {
 
     private final Logger log = LoggerFactory.getLogger(TestNet.class);
-    private String trainPath = "C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist";
+    private String trainPath = "C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist";
     private MultiLayerNetwork network;
     private int height;
     private int width;

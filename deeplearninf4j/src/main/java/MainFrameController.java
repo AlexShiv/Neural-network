@@ -68,9 +68,13 @@ public class MainFrameController {
         canvas.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
             int x = (int) event.getX() / 20;
             int y = (int) event.getY() / 20;
-            if (event.getButton() == MouseButton.PRIMARY) {
-                boardMas[x][y] = 1;
-            } else boardMas[x][y] = 0;
+            try {
+                if (event.getButton() == MouseButton.PRIMARY) {
+                    boardMas[x][y] = 1;
+                } else boardMas[x][y] = 0;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                return;
+            }
             draw(x, y);
         });
         clearButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
@@ -92,7 +96,7 @@ public class MainFrameController {
             }
             answer.setText("Анализ...");
 
-            File file = new File("C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\Neural-networks\\deeplearninf4j\\src\\main\\resources\\TestShape.png");
+            File file = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\Neural-network\\deeplearninf4j\\src\\main\\resources\\TestShape.png");
             try {
                 ImageIO.write(image, "png", file);
             } catch (IOException e) {
