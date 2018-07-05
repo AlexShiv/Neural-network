@@ -7,29 +7,34 @@ import java.io.IOException;
 public class ImageAugmentation {
 
     public static void main(String[] args) {
-        BufferedImage img = null;
-        try {
-            img = ImageIO.read(new File("C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\Neural-networks\\deeplearninf4j\\src\\main\\resources\\TestShape.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        File f = new File("C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist\\mnist_png\\data\\numbers");
+        File fnew = new File("C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist\\mnist_png\\data\\numbers — new");
+        String[] nameKey = f.list();
 
-        BufferedImage img2 = rotate(img, 90);
-        //System.out.println(img2.getRGB(0,0));
-        for (int i = 0; i < img2.getWidth(); i++) {
-            for (int j = 0; j < img2.getHeight(); j++) {
-                if (img2.getRGB(i, j) == 0) img2.setRGB(i, j, -16777216);
+        for (String s : nameKey) {
+            File folderWithImage = new File(f.getPath() + "\\" + s);
+            String[] arrImage = folderWithImage.list();
+            for (String pic : arrImage) {
+                BufferedImage img;
+                try {
+                    img = ImageIO.read(new File(folderWithImage + "\\" + pic));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    continue;
+                }
+                for (int i = -90; i <= 90; i += 5) {
+                    if (i == 0) continue;
+                    BufferedImage img2 = rotate(img, i);
+                    normalize(img2);
+                    writeImage(img2, fnew + "\\" + s + "\\"+ "angle(" + i + ")" + pic);
+                }
             }
         }
-        try {
-            ImageIO.write(img2, "png", new File("C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\Neural-networks\\deeplearninf4j\\src\\main\\resources\\TestShape2.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Good!");
+        System.out.println("DONE!");
     }
 
     public static BufferedImage rotate(BufferedImage image, double angle) {
+        angle = (Math.PI/180)*(angle);
         double sin = Math.abs(Math.sin(angle));
         double cos = Math.abs(Math.cos(angle));
         int w = image.getWidth();
@@ -40,7 +45,7 @@ public class ImageAugmentation {
         BufferedImage result = gc.createCompatibleImage(neww, newh, Transparency.TRANSLUCENT);
         Graphics2D g = result.createGraphics();
         g.translate((neww - w) / 2, (newh - h) / 2);
-        g.rotate(angle, w/2, h/2);
+        g.rotate(angle, w / 2, h / 2);
         g.drawRenderedImage(image, null);
         g.dispose();
         return result;
@@ -50,5 +55,21 @@ public class ImageAugmentation {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice gd = ge.getDefaultScreenDevice();
         return gd.getDefaultConfiguration();
+    }
+
+    private static void normalize(BufferedImage image) {
+        for (int i = 0; i < image.getWidth(); i++) {
+            for (int j = 0; j < image.getHeight(); j++) {
+                if (image.getRGB(i, j) == 0) image.setRGB(i, j, -16777216);
+            }
+        }
+    }
+
+    private static void writeImage(BufferedImage image, String path) {
+        try {
+            ImageIO.write(image, "png", new File(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
