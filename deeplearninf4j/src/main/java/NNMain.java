@@ -34,7 +34,7 @@ import java.util.Random;
 public class NNMain {
 
     private static final Logger log = LoggerFactory.getLogger(NNMain.class);
-    private static String trainPath = "C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist\\mnist_png\\data";
+    private static String trainPath = "C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\";
 
     public static void main(String[] args) throws IOException {
         int height = 28;
@@ -42,12 +42,12 @@ public class NNMain {
         int channels = 1; // single channel for grayscale images
         int outputNum = 10; // 10 digits classification
         int batchSize = 54;
-        int nEpochs = 2;
+        int nEpochs = 1;
         int seed = 1234;
         Random randNumGen = new Random(seed);
 
         // vectorization of train data
-        File trainData = new File(trainPath + "\\numbers — new");
+        File trainData = new File(trainPath + "\\training — rotate");
         FileSplit trainSplit = new FileSplit(trainData, NativeImageLoader.ALLOWED_FORMATS, randNumGen);
         ParentPathLabelGenerator labelMaker = new ParentPathLabelGenerator(); // parent path as the image label
         ImageRecordReader trainRR = new ImageRecordReader(height, width, channels, labelMaker);
@@ -60,7 +60,7 @@ public class NNMain {
         trainIter.setPreProcessor(scaler);
 
         // vectorization of test data
-        File testData = new File("C:\\Users\\alexey\\Desktop\\АГУ\\GitHub\\mnist\\mnist_png\\testing");
+        File testData = new File(trainPath + "\\testing");
         FileSplit testSplit = new FileSplit(testData, NativeImageLoader.ALLOWED_FORMATS, randNumGen);
         ImageRecordReader testRR = new ImageRecordReader(height, width, channels, labelMaker);
         testRR.initialize(testSplit);
