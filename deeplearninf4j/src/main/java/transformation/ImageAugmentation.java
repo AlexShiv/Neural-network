@@ -1,3 +1,5 @@
+package transformation;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -10,10 +12,10 @@ public class ImageAugmentation {
         File f;
         File fnew;
         try {
-            /*f = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\training");
-            fnew = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\training — rotate");*/
-            f = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\data\\numbers");
-            fnew = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\data\\numbers — new");
+            f = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\training");
+            fnew = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\training — rotate");
+            /*f = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\data\\numbers");
+            fnew = new File("C:\\Users\\acer\\Desktop\\ASU\\Нейронные сети\\mnist\\mnist_png\\data\\numbers — new")*/;
         } catch (Exception e) {
             System.out.println("НЕВЕРНЫЙ ПУТЬ К ФАЙЛАМ!");
             return;
@@ -46,16 +48,11 @@ public class ImageAugmentation {
 
     public static BufferedImage rotate(BufferedImage image, double angle) {
         angle = (Math.PI / 180) * (angle);
-        double sin = Math.abs(Math.sin(angle));
-        double cos = Math.abs(Math.cos(angle));
         int w = image.getWidth();
         int h = image.getHeight();
-        /*int neww = (int) Math.floor(w * cos + h * sin);
-        int newh = (int) Math.floor(h * cos + w * sin);*/
         GraphicsConfiguration gc = getDefaultConfiguration();
         BufferedImage result = gc.createCompatibleImage(w, h, Transparency.TRANSLUCENT);
         Graphics2D g = result.createGraphics();
-        //g.translate(w / 2, (newh - h) / 2);
         g.rotate(angle, w / 2, h / 2);
         g.drawRenderedImage(image, null);
         g.dispose();
